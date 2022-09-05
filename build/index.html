@@ -1,0 +1,24 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Viking Title</title>
+            <link rel="stylesheet" href=bundle.index-MYJ7IFHM.css> 
+        </head>
+        <body>
+            <div id="root"></div>
+            <script src=bundle.index-XK2ZVTIZ.js></script>  <!-- ?. chainig operator -->
+            <script>
+                const evtSource = new EventSource('http://localhost:3000/subscribe');
+                evtSource.onopen = function() {console.log('open')}
+                evtSource.onerror = function() {console.log('error')}
+                evtSource.onmessage = function() {
+                    console.log('onmessage');
+                    window.location.reload();
+                }
+            </script>
+        </body>
+        </html>
